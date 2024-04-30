@@ -1,5 +1,4 @@
 import subprocess
-import json
 import openai
 
 TEMP = 1.0  # range 0-2, higher is more creative, lower is more accurate
@@ -106,7 +105,7 @@ def main():
         iterative_message = [
             {
             "role": "system",
-            "content": f'''You are a senior C programmer. Given the following C program and the results when it is compiled and ran, please debug the program and fix the issue, based on the results.
+            "content": f'''You are a senior C programmer. Given the following C program and the results when it is compiled and ran, please debug the program and fix all issues, based on the results.
                 You must start any code you write with the comment {CODE_DELIM_START} and end with the comment {CODE_DELIM_END}'''
             },
             {
